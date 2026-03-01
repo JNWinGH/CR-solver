@@ -1,4 +1,4 @@
-# CR-solver Documentation
+# CR-solver 1.0 Documentation
 
 ## Description
 
@@ -74,3 +74,9 @@ k_star: -1/ tau_s
 tau_e: Time of CR-SR transition
 
 The scatter data used for plotting the GW spectrum is also output.
+
+# CR-solver-MMA Documentation
+
+CR-solver-MMA is the Mathematica version of CR-solver 1.0. 
+All functions are contained in a single, self-contained file.
+
