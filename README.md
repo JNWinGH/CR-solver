@@ -1,4 +1,4 @@
-# CR-solver 1.0 Documentation
+# CR-solver Documentation
 
 ## Description
 
@@ -17,6 +17,7 @@ CR-solver leverages [SIGWfast](https://github.com/Lukas-T-W/SIGWfast) to calcula
 
 CR-solver requires Python 3 and Jupyter Notebook (or JupyterLab).  
 We strongly recommend using a virtual environment together with a package manager such as `conda` to manage dependencies.
+CR-solver is compiled for NumPy 1.x and does not currently support NumPy 2.x.  Running it with NumPy ≥ 2 may cause crashes.
 
 To get started, download the latest release as a `.zip` archive.  
 After extracting the archive, the required files and directory structure will be properly organized in the main project directory.
@@ -48,11 +49,13 @@ k1stpk: Wavenumber of the first peak in the curvature perturbation power spectru
 k2k1: Ratio of the second peak wavenumber to the first peak wavenumber  
 A2A1: Ratio of the second peak amplitude to the first peak amplitude  
 AIR: Power spectrum amplitude around the CMB scale (infrared normalization)  
-Type: Choose `"exact"` for the exact power spectrum or `"smooth"` for the smoothed one. Any other value will result in an error.
+Type: Choose `"exact"` for the exact power spectrum or `"smoothed"` for the smoothed one. Any other value will result in an error.
 
 Important:
-k2k1 should be between \(10^{0.8}\) and \(10^2\)  
-A2A1 should be between \(10^{-0.25}\) and \(10^{2.2}\)  
+k2k1 should be larger than 10^0.7,
+A2A1 should be larger than 10^-0.25,
+and log10(A2A1) ≤ -0.727 + 2.015 * log10(k2k1),
+Otherwise, the output should be interpreted with caution.
 
 Values outside these ranges may lead to unreliable solutions. Please refer to the paper for detailed explanations.
 
@@ -66,7 +69,7 @@ After inputting all the required quantities, the code outputs the following:
 Constant-roll inflation model parameters:
 
 beta: Half of the second slow-roll parameter. Should be between -3 and -2; values outside this range are considered unreliable as solutions.  
-NCR: Duration of the constant-roll stage. Should be within 2 to 4; values outside this range are considered unreliable as solutions.
+NCR: Duration of the constant-roll stage. 
 Please refer to the paper for detailed explanations.
 
 tau_s: Time of the SR-CR transition
@@ -74,9 +77,3 @@ k_star: -1/ tau_s
 tau_e: Time of CR-SR transition
 
 The scatter data used for plotting the GW spectrum is also output.
-
-# CR-solver-MMA Documentation
-
-CR-solver-MMA is the Mathematica version of CR-solver 1.0. 
-All functions are contained in a single, self-contained file.
-
