@@ -10,6 +10,7 @@ CR-solver is a Python code designed to determine the model parameters of constan
 This code accompanies the paper:  
 "Constant-Roll Inflation: Analytical Formula for Power Spectrum and Implication on Induced Gravitational Wave Spectrum"
 Authors: Hayato Motohashi, Shi Pi, Yuichiro Tada, Jianing Wang.
+Users of this code are kindly requested to cite this paper.
 
 CR-solver leverages [SIGWfast](https://github.com/Lukas-T-W/SIGWfast) to calculate the induced gravitational wave spectrum.
 
