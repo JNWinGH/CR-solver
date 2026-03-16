@@ -49,6 +49,7 @@ After installing all the required packages, the user only needs to input the fol
 k2k1: Ratio of the second peak wavenumber to the first peak wavenumber  
 A2A1: Ratio of the second peak amplitude to the first peak amplitude  
 Type: Choose `"exact"` for the exact power spectrum or `"smoothed"` for the smoothed one. Any other value will result in an error.
+
 Ahighest: Highest power spectrum amplitude, either comes from the first peak or the second peak
 khighest: Wavenumber (or frequency) of highest point in power spectrum
 
@@ -76,6 +77,7 @@ Please refer to the paper for detailed explanations.
 tau_s: Time of the SR-CR transition
 k_star: -1/ tau_s
 tau_e: Time of CR-SR transition
+
 AIR: Power spectrum amplitude at IR limit
 
 The scatter data used for plotting the GW spectrum is also output.
