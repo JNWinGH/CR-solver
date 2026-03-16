@@ -51,6 +51,7 @@ A2A1: Ratio of the second peak amplitude to the first peak amplitude
 Type: Choose `"exact"` for the exact power spectrum or `"smoothed"` for the smoothed one. Any other value will result in an error.
 
 Ahighest: Highest power spectrum amplitude, either comes from the first peak or the second peak
+
 khighest: Wavenumber (or frequency) of highest point in power spectrum
 
 Important:
