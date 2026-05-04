@@ -26,7 +26,7 @@ You can then proceed with installing the required dependencies and running the s
 
 ## User guide
 
-Users only need to work with the `main.ipynb` notebook to input the initial parameters — specifically, the ratios of wavenumbers and the amplitudes of the two peaks in the curvature perturbation power spectrum.  
+Users only need to work with the `main.ipynb` notebook to input the initial parameters — specifically, the overall amplitude determined by the infrared limit or the highest peak, the ratios of wavenumbers and the amplitudes of the two peaks in the curvature perturbation power spectrum.  
 
 Running the notebook will generate the results, including:
 constant-roll parameters, curvature perturbation power spectrum, and induced gravitational wave spectrum
@@ -48,19 +48,21 @@ After installing all the required packages, the user only needs to input the fol
 
 k2k1: Ratio of the second peak wavenumber to the first peak wavenumber  
 A2A1: Ratio of the second peak amplitude to the first peak amplitude  
+khighest: Wavenumber (or frequency) of highest point in power spectrum
+AIRinput: IR power spectrum amplitude as direct input 
+Ahighest: Highest power spectrum amplitude, either comes from the first peak or the second peak
 Type: Choose `"exact"` for the exact power spectrum or `"smoothed"` for the smoothed one. Any other value will result in an error.
 
-Ahighest: Highest power spectrum amplitude, either comes from the first peak or the second peak
-
-khighest: Wavenumber (or frequency) of highest point in power spectrum
-
 Important:
+
 k2k1 should be larger than 10^0.7,
 A2A1 should be larger than 10^-0.25,
 and log10(A2A1) ≤ -0.727 + 2.015 * log10(k2k1),
 Otherwise, the output should be interpreted with caution.
-
 Values outside these ranges may lead to unreliable solutions. Please refer to the paper for detailed explanations.
+
+Only one of AIRinput and Ahighest can be specified at runtime, as the two options are mutually exclusive.
+
 
 # --------------- <- input --------------- #
 
@@ -78,7 +80,6 @@ Please refer to the paper for detailed explanations.
 tau_s: Time of the SR-CR transition
 k_star: -1/ tau_s
 tau_e: Time of CR-SR transition
-
 AIR: Power spectrum amplitude at IR limit
 
 The scatter data used for plotting the GW spectrum is also output.
